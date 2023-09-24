@@ -27,6 +27,7 @@ public class UserController {
 	@Autowired //Injecao de dependecia, instancia automaticamente o UserRepository
 	private UserRepository repository;
 	
+	//READ ALL
 	//Endpoint para mostrar todos os usuarios do Banco
 	@GetMapping //informa que essa é uma requisicao HTTP GET
 	public List<User> findAll(){
@@ -34,7 +35,7 @@ public class UserController {
 		return result;
 	}
 	
-	//READ
+	//READ ID
 	//Endpoint para buscar um usuario por ID no banco
 	@GetMapping(value = "/{id}") //informa que é uma requisicao HTTP GET e indica que o caminho é /users/numero que é o ID
 	public User findById(@PathVariable Long id){
